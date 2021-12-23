@@ -1,0 +1,27 @@
+{% extends 'base.html' %} {% block title %}Post{% endblock title %} {% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 col-md-8">
+            <h3>{{post.title}}</h3>
+            <p>{{post.cat.title}}</p>
+            <img src="{{post.image.url}}" class="img-fluid" alt="{{post.image.name}}">
+            <p>{{post.content | safe}}</p>
+        </div>
+        <div class="col-sm-12 col-md-4">
+            <div class="row">
+                {% for rltPost in cat %}
+                <div class="col-sm-5 col-md-12">
+                    <div class="card">
+                        <img src="{{rltPost.image.url}}" style="max-height: 200px; object-fit:cover;" class="card-img-top img-fluid" alt="{{rltPost.image.name}}">
+                        <div class="card-body">
+                            <h5 class="card-title">{{rltPost.title}}</h5>
+                            <p class="card-text">{{rltPost.description | truncatewords:5 }}</p>
+                            <a href="blog/{{rltPost.url}}" class="btn btn-border-primary">Read Now</a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    {% endblock content %}

@@ -1,0 +1,25 @@
+{% extends 'base.html' %} {% block title %}Blogs{% endblock title %} {% block content %}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            {% for p in posts %}
+            <div class="row mt-2 border">
+                <div class="col-md-8">
+                    {{p.content | truncatewords:60| safe}}
+                    <div class="d-flex justify-content-end">
+                        <a href="blog/{{p.url}}" class="btn btn-success">Read More</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <img src="{{p.image.url}}" alt="{{p.title}}" class="img-fluid">
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+</div>
+
+
+{% endblock content %}

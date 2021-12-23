@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Welcome To My Tech Support{% endblock title %}
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="owl-carousel">
+            {% for slide in slides %}
+            <div class="card bg-dark text-white">
+                <img src="{{slide.image.url}}" style="max-height: 400px; object-fit:cover;" class="card-img"
+                    alt="{{slide.image.name}}">
+                <div class="card-img-overlay">
+                    <h5 class="card-title">{{slide.title}}</h5>
+                    <p class="card-text">{{slide.description}}</p>
+                    <p class="card-text">{{slide.created_on}}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <h1 class="text-center section-title">This is section Heading</h1>
+        <p class="text-center text-justify section-pera">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Assumenda esse saepe autem earum ab incidunt voluptates sed quisquam hic, ullam vitae facere laudantium
+            minima, tempore quos eaque, distinctio veritatis repellat.</p>
+        <div class="col-sm-12 col-md-6">
+            <div class="row">
+                <h3 class="text-center sub-heading">This is Sub Heading</h3>
+                <img src="{% static 'img/default.jpg' %}" alt="">
+                <p class="text-muted">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aperiam cum assumenda,
+                    neque similique ratione ipsa nesciunt beatae harum autem optio mollitia, vel animi soluta excepturi
+                    perferendis rem facere debitis aspernatur.</p>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-6">
+            <div class="row">
+                <h3 class="text-center sub-heading">This is Sub Heading</h3>
+                <img src="{% static 'img/default.jpg' %}" alt="">
+                <p class="text-muted">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aperiam cum assumenda,
+                    neque
+                    similique ratione ipsa nesciunt beatae harum autem optio mollitia, vel animi soluta excepturi
+                    perferendis rem facere debitis aspernatur.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <h1 class="text-center section-title">This is section Heading</h1>
+    <p class="text-center text-justify section-pera">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        Assumenda esse saepe autem earum ab incidunt voluptates sed quisquam hic, ullam vitae facere laudantium
+        minima, tempore quos eaque, distinctio veritatis repellat.</p>
+    <div class="row row-cols-3">
+        <div class="col">
+            <h4><a href="">Facebook</a></h4>
+        </div>
+        <div class="col">
+            <h4><a href="">Ebay</a></h4>
+        </div>
+        <div class="col">
+            <h4><a href="">Amazon</a></h4>
+        </div>
+        <div class="col">
+            <h4><a href="">IOS</a></h4>
+        </div>
+        <div class="col">
+            <h4><a href="">Paypal</a></h4>
+        </div>
+    </div>
+</div>
+{% endblock content %}
